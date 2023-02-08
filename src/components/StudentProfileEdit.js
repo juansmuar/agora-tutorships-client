@@ -158,7 +158,7 @@ const StudentProfileEdit = () => {
       <section className="student-profile__photo-container">
         <img
           className="student-profile__photo"
-          src={image ? URL.createObjectURL(image) : state.profile_photo}
+          src={image ? URL.createObjectURL(image) : state.profilephoto}
           alt={state.name}
         />
         <label htmlFor="student-profile__photo__input" className="student-profile__photo__button">

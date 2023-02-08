@@ -36,7 +36,7 @@ describe('Check TurorsContainer component', () =>{
   const tutors= [{
     id:'id', 
     name:'name',
-    profile_photo: 'photo',
+    profilephoto: 'photo',
     description: 'description',
     profession: '',
     focus:'focus',

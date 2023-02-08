@@ -48,7 +48,7 @@ function App() {
           <StudentRoute exact path="/tutor/:id/schedule" component={TutorsSchedule} />
           <StudentRoute exact path="/checkout/:id" component={CheckoutPage} />
           <Route path="*" component={errorPage} />
-           </Switch>
+        </Switch>
       </Layout>
     </Router>
   );

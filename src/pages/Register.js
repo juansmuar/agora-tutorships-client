@@ -22,7 +22,7 @@ function Register() {
       password: '',
       profession: '',
       focus: '',
-      profile_photo: 'https://therminic2018.eu/wp-content/uploads/2018/07/dummy-avatar-300x300.jpg',
+      profilephoto: 'https://therminic2018.eu/wp-content/uploads/2018/07/dummy-avatar-300x300.jpg',
     },
     errors: {
       name: true,

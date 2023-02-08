@@ -148,7 +148,7 @@ function Header() {
         {!!globalState.token ? (
           <>
             <div className="mobile-menu__profile-photo-container">
-              <img className="header__profile-photo" src={globalState.currentUser.profile_photo} alt="Profile" />
+              <img className="header__profile-photo" src={globalState.currentUser.profilephoto} alt="Profile" />
               <span className="header__profile-name">{globalState.currentUser.name}</span>
             </div>
             <div className="mobile-menu__buttons">
@@ -187,7 +187,7 @@ function Header() {
               }, 100);
             }}
             className="header__profile-photo"
-            src={globalState.currentUser.profile_photo}
+            src={globalState.currentUser.profilephoto}
             alt="Profile"
             tabIndex="1"
           />

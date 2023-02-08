@@ -79,7 +79,7 @@ function StudentProfileTutorships() {
         <p className="student__tutorships__title">You don't have any pending tutorships</p>
       ) : (
         state.tutorships.map((tutorship) => {
-          const { name, focus, profile_photo, email } = tutorship.tutorId;
+          const { name, focus, profilephoto, email } = tutorship.tutorId;
           const { status, _id: id, isRated } = tutorship;
           const dateObject = new Date(tutorship.date);
           const zonedDate = utcToZonedTime(dateObject, 'America/Argentina');
@@ -88,7 +88,7 @@ function StudentProfileTutorships() {
           return (
             <div key={id} className="student__tutorship-container">
               <div className="student__tutorship__image-container">
-                <img src={profile_photo} alt={name} className="student__tutorship__image" />
+                <img src={profilephoto} alt={name} className="student__tutorship__image" />
               </div>
               <div className="student__tutorship__description-container">
                 <h2 className="student__tutorship__description-title">

@@ -26,7 +26,7 @@ describe('renders the info from backend', () => {
     axios.get.mockResolvedValueOnce({
       data: {
         name: 'Axel Leuschke',
-        profile_photo: 'https://cdn.fakercloud.com/avatars/samgrover_128.jpg',
+        profilephoto: 'https://cdn.fakercloud.com/avatars/samgrover_128.jpg',
         description: 'Description test',
         profession: 'National Operations Representative',
         focus: 'Math',

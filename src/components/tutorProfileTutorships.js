@@ -79,7 +79,7 @@ function TutorProfileTutorships() {
           const { name, focus, email } = tutorship.tutorId;
           const { status, _id: id } = tutorship;
           const studentName = tutorship.studentId.name;
-          const studentPhoto = tutorship.studentId.profile_photo;
+          const studentPhoto = tutorship.studentId.profilephoto;
           const dateObject = new Date(tutorship.date);
           const zonedDate = utcToZonedTime(dateObject, 'America/Argentina');
           const date = format(zonedDate, 'dd/MM/yyyy');

@@ -4,7 +4,7 @@ import '../assets/styles/components/tutorCards.scss';
 import history from '../utils/history';
 
 function TutorsCard(tutor) {
-  const { rating, profile_photo, name, profession, focus, description, _id, price } = tutor.props;
+  const { rating, profilephoto, name, profession, focus, description, _id, price } = tutor.props;
   const starNodes = [];
 
   for (let i = 1; i <= rating; i++) {
@@ -18,7 +18,7 @@ function TutorsCard(tutor) {
   return (
     <div key={_id} className="card" onClick={handleClick}>
       <div className="card-visual-info">
-        <img src={profile_photo} alt="profilepicture"></img>
+        <img src={profilephoto} alt="profilepicture"></img>
         <h1 key={name}>{name}</h1>
         <div className="card-stars">{starNodes}</div>
         <p className="price">Tutorship fee</p>

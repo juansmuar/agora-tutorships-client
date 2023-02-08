@@ -102,7 +102,7 @@ function TutorsSchedule(props) {
           <h1>
             Ask {state.tutor.name} for a {state.tutor.focus} tutorship
           </h1>
-          <img src={state.tutor.profile_photo} alt={state.tutor.name} />
+          <img src={state.tutor.profilephoto} alt={state.tutor.name} />
 
           <form className="tutorsschedule-form">
             <label htmlFor="subject">Subject*</label>

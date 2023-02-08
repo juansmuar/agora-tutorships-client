@@ -78,7 +78,7 @@ function TutorProfilePage() {
       schedule: globalUser.schedule,
       price: globalUser.price,
     }));
-    setPreviewPhoto(globalUser.profile_photo);
+    setPreviewPhoto(globalUser.profilephoto);
   }, [globalUser]);
 
   function handleChange(e) {
