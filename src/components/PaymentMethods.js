@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 import '../assets/styles/components/PaymentMethods.scss';
 
 function PaymentMethods() {
-  const user_id = useSelector((state) => state.currentUser._id);
+  const userId = useSelector((state) => state.currentUser._id);
   const user_email = useSelector((state) => state.currentUser.email);
   const user_name = useSelector((state) => state.currentUser.name);
   const firstName = function (user_name) {
@@ -93,7 +93,7 @@ function PaymentMethods() {
   });
 
   useEffect(() => {
-    axios.get(`/get-customer?id=${user_id}`).then((result) => {
+    axios.get(`/get-customer?id=${userId}`).then((result) => {
       const customer = result.data.customer.data;
       if (customer.id_customer) {
         setEpayco_customer_id(customer.id_customer);
@@ -109,7 +109,7 @@ function PaymentMethods() {
       }
       setIsLoading(false);
     });
-  }, [user_id]);
+  }, [userId]);
 
   function cardInfoChange(e) {
     setCardInfo((state) => ({
@@ -206,13 +206,13 @@ function PaymentMethods() {
         });
       } else {
         await axios.post('/create-user', {
-          user_id,
+          userId,
           customerInfo,
           cardInfo,
         });
       }
       await axios
-        .get(`/get-customer?id=${user_id}`)
+        .get(`/get-customer?id=${userId}`)
         .then((result) => {
           const customer = result.data.customer.data;
           if (customer.id_customer) {
@@ -270,7 +270,7 @@ function PaymentMethods() {
           mask: card.mask,
         });
         await axios
-          .get(`/get-customer?id=${user_id}`)
+          .get(`/get-customer?id=${userId}`)
           .then((result) => {
             const customer = result.data.customer.data;
             if (customer.id_customer) {

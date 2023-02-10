@@ -67,7 +67,7 @@ function StudentProfileTutorships() {
   function handlePayment(data, e) {
     e.preventDefault();
     history.push(`/checkout/${data.tutorshipId}`, {
-      state: { tutorship_id: data.tutorshipId, tutorship_price: data.tutorshipPrice },
+      state: { tutorshipId: data.tutorshipId, tutorshipPrice: data.tutorshipPrice, tutorName: data.tutorName },
     });
   }
 
@@ -107,7 +107,7 @@ function StudentProfileTutorships() {
                       <>
                         <button
                           onClick={(e) =>
-                            handlePayment({ tutorshipPrice: tutorship.tutorId.price, tutorshipId: id }, e)
+                            handlePayment({ tutorshipPrice: tutorship.tutorId.price, tutorshipId: id, tutorName: tutorship.tutorId.name }, e)
                           }
                           className="student__tutorship__buttons__pay-button"
                         >

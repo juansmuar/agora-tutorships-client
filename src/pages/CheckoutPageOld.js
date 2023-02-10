@@ -9,9 +9,9 @@ import '../assets/styles/pages/checkout.scss';
 
 export default function CheckoutPage(props) {
   const tutorshipData = props.location.state.state;
-  const { tutorship_id, tutorship_price } = tutorshipData;
+  const { tutorshipId, tutorshipPrice } = tutorshipData;
   const [loadingPayment, setLoadingPayment] = useState(false);
-  const user_id = useSelector((state) => state.currentUser._id);
+  const userId = useSelector((state) => state.currentUser._id);
   const user_email = useSelector((state) => state.currentUser.email);
   const user_name = useSelector((state) => state.currentUser.name);
   const firstName = function (user_name) {
@@ -57,7 +57,7 @@ export default function CheckoutPage(props) {
   const [paymentInfo, setPaymentInfo] = useState({
     doc_type: '',
     doc_number: '',
-    value: tutorship_price,
+    value: tutorshipPrice,
     tax: '16000',
     tax_base: '30000',
     currency: 'COP',
@@ -117,7 +117,7 @@ export default function CheckoutPage(props) {
 
   useEffect(() => {
     axios
-      .get(`/get-customer?id=${user_id}`)
+      .get(`/get-customer?id=${userId}`)
       .then((result) => {
         const customer = result.data.customer.data;
         setEpayco_customer_id(customer.id_customer);
@@ -147,7 +147,7 @@ export default function CheckoutPage(props) {
       .then(() => {
         setIsLoading(false);
       });
-  }, [user_id, user_email]);
+  }, [userId, user_email]);
 
   function validateinputs(e) {
     const input = e.target.name;
@@ -252,8 +252,8 @@ export default function CheckoutPage(props) {
     try {
       if (existingCards.cards.length !== 0) {
         await axios.post('/payment', {
-          tutorship_id,
-          user_id,
+          tutorshipId,
+          userId,
           currentPaymentData: {
             customer_id: epayco_customer_id,
             token_card: token_card,
@@ -268,8 +268,8 @@ export default function CheckoutPage(props) {
         history.push('/profile/tutorships');
       } else {
         await axios.post('/payment', {
-          tutorship_id,
-          user_id,
+          tutorshipId,
+          userId,
           cardInfo,
           customerInfo,
           paymentInfo,

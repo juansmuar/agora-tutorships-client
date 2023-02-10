@@ -12,7 +12,7 @@ export default function CheckoutPage(props) {
   return (
     <div className="payment__body">
       <Elements stripe={stripePromise}>
-        <CheckoutForm tutorshipData={tutorshipData}></CheckoutForm>
+        <CheckoutForm tutorshipData={tutorshipData}/>
       </Elements>
     </div>
   );
