@@ -32,7 +32,7 @@ const initialState = {
 };
 
 // Modify the reducer in order to receive the actions
-const reducer = function (state = initialState, action) {
+const rootReducer = function (state = initialState, action) {
   if (action.type === LOGIN) {
     return {
       ...state,
@@ -87,4 +87,4 @@ const reducer = function (state = initialState, action) {
   return state;
 };
 
-export default reducer;
+export default rootReducer;
