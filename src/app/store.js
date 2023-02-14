@@ -1,10 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import  from '';
+import rootReducer from '../reducers';
 
 const store = configureStore({
-  reducer: {
-    agora: agoraReducer,
-  }
+  reducer: rootReducer,
 });
 
 export default store;

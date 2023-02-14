@@ -63,8 +63,9 @@ function TutorsSchedule(props) {
     const { subject, description, date, time } = state.inputs;
     if (subject && description && date && time) {
       const apponintment = {
-        tutor: state.tutor,
-        inputs: state.inputs,
+        date: state.inputs.date,
+        time: state.inputs.time,
+        tutorId: state.tutor._id,
         student: student,
       };
 
