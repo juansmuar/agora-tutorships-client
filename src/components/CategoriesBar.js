@@ -12,13 +12,13 @@ function CategoriesBar({ Categories, setFilter }) {
         onChange={(e) => setFilter(e.target.value)}
       >
         <option hidden>Choose an area</option>
-        {Categories.map((category) => (
+        {Categories?.map((category) => (
           <option key={category._id} value={category.subject}>
             {category.subject}
           </option>
         ))}
       </select>
-      {Categories.map((e, i) => (
+      {Categories?.map((e, i) => (
         <button
           className={selected === e.subject ? 'category__button-selected' : 'category__button'}
           key={i}
