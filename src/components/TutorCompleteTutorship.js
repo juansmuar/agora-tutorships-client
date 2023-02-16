@@ -13,7 +13,7 @@ function TutorCancelTutorship({ swal, tutorshipId, setState }) {
 
     axios
       .post("/completeTutorship", {
-        tutorship: tutorshipId,
+        tutorshipId,
         token: localStorage.getItem("token"),
       })
       .then(() => {

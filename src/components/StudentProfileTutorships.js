@@ -45,9 +45,9 @@ function StudentProfileTutorships() {
         component: (
           <StudentRateTutorship
             swal={mySwal}
-            student={id}
-            tutor={data.tutor}
-            tutorship={data.tutorshipId}
+            studentId={id}
+            tutorId={data.tutor}
+            tutorshipId={data.tutorshipId}
             setState={setState}
           />
         ),

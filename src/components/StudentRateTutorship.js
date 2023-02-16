@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import axios from '../utils/axios';
 
-function StudentRateTutorship({ swal, student, tutor, tutorship, setState }) {
+function StudentRateTutorship({ swal, studentId, tutorId, tutorshipId, setState }) {
   const [rating, setRating] = useState(0);
   const [review, setReview] = useState('');
   const [hover, setHover] = useState(0);
@@ -18,9 +18,9 @@ function StudentRateTutorship({ swal, student, tutor, tutorship, setState }) {
     axios
       .post('/rateTutorship', {
         rating,
-        tutor,
-        tutorship,
-        student,
+        tutorId,
+        tutorshipId,
+        studentId,
         review,
         token: localStorage.getItem('token'),
       })
