@@ -8,8 +8,8 @@ import { faSearch, faBars } from '@fortawesome/free-solid-svg-icons';
 import '../assets/styles/components/Header.scss';
 
 import { useDispatch, useSelector } from 'react-redux';
-import logout from '../actions/logout';
-import toggleProfileTooltip from '../actions/toggleProfileTooltip';
+import { logout } from '../redux/userSlice';
+import { toggleProfileTooltip } from '../redux/userSlice';
 import { AUTHORIZED } from '../actions/constants';
 import history from '../utils/history';
 

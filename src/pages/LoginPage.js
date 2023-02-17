@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faKey } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import login from '../actions/login';
+import { login } from '../redux/userSlice';
 
 import '../assets/styles/pages/LoginPage.scss';
 import { useDispatch, useSelector } from 'react-redux';

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from '../utils/axios';
 import { FaUserAlt, FaEnvelope, FaKey } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { register as registerAction } from '../actions/register';
+import { register } from '../redux/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import FormTutor from '../components/FormTutor';
 import { AUTHORIZED } from '../actions/constants';
@@ -174,7 +174,7 @@ function Register() {
     // destructure the state, less variables declared
     e.preventDefault();
     const { type, inputs } = state;
-    dispatch(registerAction(type, inputs));
+    dispatch(register({type, inputs}));
   };
 
   const handleChange = (e) => {

@@ -7,8 +7,8 @@ import { LandingPage } from './pages/LandingPage';
 import TutorDetailsPage from './pages/TutorDetailsPage';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import getUserData from './actions/getUserData';
-import { AUTH_FAILED } from './actions/constants';
+import { getUserData } from './redux/userSlice';
+import { authFailed } from './redux/userSlice';
 import { useEffect } from 'react';
 import { errorPage } from './pages/errorPage';
 import HomePage from './pages/HomePage';
@@ -25,10 +25,12 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (token !== null) {
+    console.log('Efecto', token);
+    if (token) {
       dispatch(getUserData(token));
+      //history.push('/home');
     } else {
-      dispatch({ type: AUTH_FAILED });
+      dispatch(authFailed());
     }
   }, [dispatch, token]);
 
