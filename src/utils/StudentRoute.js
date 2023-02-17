@@ -6,9 +6,7 @@ import '../assets/styles/components/PrivateRoute.scss';
 
 const StudentRoute = ({ component: Component, ...rest }) => {
   const role = useSelector((state) => state.currentUser.type);
-  console.log('student route role: ', role);
   const authUser = useSelector((state) => state.auth_status);
-  console.log('student route authUser: ', authUser);
   if (authUser === LOADING) return <Loader />;
   return (
     <Route

@@ -102,7 +102,6 @@ export default function CheckoutPage(props) {
 
   function previous() {
     setCount(count - 1);
-    console.log(paymentInfo.value);
     if (count === 1) {
       setCount(1);
     }

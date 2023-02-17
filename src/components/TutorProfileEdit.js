@@ -264,7 +264,6 @@ function TutorProfilePage() {
     const formData = new FormData();
     if (image) {
       formData.append('image', image);
-      console.log(formData);
     }
     updateTutorProfile(userData.inputs, formData, token);
   };

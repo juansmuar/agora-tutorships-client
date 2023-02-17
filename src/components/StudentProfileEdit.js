@@ -108,7 +108,6 @@ const StudentProfileEdit = () => {
     const formData = new FormData();
     if (image) {
       formData.append('image', image);
-      console.log(formData);
     }
     if (validateInputs(inputs.name, inputs.email, inputs.password)) {
       updateStudentProfile(inputs, formData, token);

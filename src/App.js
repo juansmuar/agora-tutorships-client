@@ -25,10 +25,9 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log('Efecto', token);
     if (token) {
       dispatch(getUserData(token));
-      //history.push('/home');
+      history.push('/home');
     } else {
       dispatch(authFailed());
     }

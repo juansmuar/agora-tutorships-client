@@ -44,7 +44,6 @@ function TutorsSchedule(props) {
         .get(`/tutor/${props.match.params.id}`)
         .then((query) => {
           setState((prevState) => ({ ...prevState, loading: false, tutor: query.data }));
-          console.log(query.data);
         })
         .catch(() => {
           history.replace('/home');
