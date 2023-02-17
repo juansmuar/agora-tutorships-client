@@ -18,7 +18,6 @@ function TutorDetailsPage(props) {
       try {
         const tutorData = await axios.get(`/tutor/${id}`);
         const data = tutorData.data;
-        console.log(data);
         const reviewData = tutorData.data.reviews;
         setTutor(data);
         setReviews(reviewData);

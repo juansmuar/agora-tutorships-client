@@ -53,7 +53,6 @@ export const getUserData = createAsyncThunk('user/getUserData', async (token) =>
 
 export const register = createAsyncThunk('user/register', async ({type, inputs}) => {
   const response = await registerUser(type, inputs);
-  console.log('register: ', response);
   return response;
 });
 
@@ -79,7 +78,6 @@ const userSlice = createSlice({
     builder
     //login
       .addCase(login.fulfilled, (state, action) => {
-        console.log('login fullfilled: ', action.payload)
         state.token = action.payload.token;
         state.auth_status = LOADING;
         state.status = 'succeeded';
@@ -96,8 +94,6 @@ const userSlice = createSlice({
     //Userdata  
       .addCase(getUserData.fulfilled, (state, action) => {
         state.token = localStorage.getItem(TOKEN);
-        console.log('payload: ', action.payload);
-        console.log('payload: ', action.payload.userData);
         state.currentUser = {
           _id: action.payload.userId,
           name: action.payload.userData.name,
