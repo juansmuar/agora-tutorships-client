@@ -56,24 +56,3 @@ export async function registerUser (type, inputs) {
     });
   };
 };
-
-
-
-
-
-// export async function loginUser({ email, password }) {
-//   return async function (dispatch) {
-//     await axios
-//       .post('/login', { email, password })
-//       .then((response) => {
-//         const token = response.data.token;
-//         const userData = response.data.userData;
-//         dispatch({ type: LOGIN, payload: { token, userData } });
-//         localStorage.setItem(TOKEN, token);
-//         history.push('/home');
-//       })
-//       .catch(() => {
-//         dispatch({ type: LOGIN_FAILED });
-//       });
-//   };
-// }
